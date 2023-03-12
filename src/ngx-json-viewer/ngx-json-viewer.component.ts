@@ -1,6 +1,7 @@
 import { Component, OnChanges, Input } from '@angular/core';
 
 export interface Segment {
+  rawHtml?: boolean;
   key: string;
   value: any;
   type: undefined | string;
@@ -22,6 +23,7 @@ export class NgxJsonViewerComponent implements OnChanges {
   @Input() _currentDepth = 0;
 
   segments: Segment[] = [];
+
 
   ngOnChanges() {
     this.segments = [];
@@ -73,6 +75,10 @@ export class NgxJsonViewerComponent implements OnChanges {
       case 'string': {
         segment.type = 'string';
         segment.description = '"' + segment.value + '"';
+        segment.rawHtml = segment.value.startsWith("#ngx-raw-html-value#:")
+        if(segment.rawHtml){
+          segment.description = segment.description.replace("#ngx-raw-html-value#:","");
+        }
         break;
       }
       case 'undefined': {

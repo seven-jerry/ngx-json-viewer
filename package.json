@@ -1,5 +1,5 @@
 {
-  "name": "ngx-json-viewer",
+  "name": "ngx-json-viewer-jb",
   "version": "3.2.1",
   "description": "JSON formatter / viewer for Angular",
   "keywords": [
@@ -10,12 +10,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hivivo/ngx-json-viewer.git"
+    "url": "git+https://github.com/seven-jerry/ngx-json-viewer.git"
   },
-  "bugs": {
-    "url": "https://github.com/hivivo/ngx-json-viewer/issues"
-  },
-  "homepage": "https://github.com/hivivo/ngx-json-viewer#readme",
   "scripts": {
     "build": "ng-packagr -p ng-package.json",
     "release": "yarn build && yarn publish ./dist",
